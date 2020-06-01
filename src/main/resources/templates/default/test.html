@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <th:block layout:fragment="fragments/header"></th:block>
+    </head>
+    <body>
+        <h1>test.html</h1>
+
+        <h2>Thymeleaf</h2>
+
+        <span>TestVo</span> : 
+        <span th:text="${testVo.testStr}"></span>,
+        <span th:text="${testVo.testInt}"></span>
+        
+
+        <th:block th:replace="fragments/script"></th:block>
+        <footer th:replace="fragments/footer"></footer>
+        <script>
+            $(function(){
+                console.log("test.html script!!");
+                init();
+            });
+
+            const init = function(){
+                console.log("init");
+                testLog();
+            }
+
+            const testLog = function(){
+                common.log("공통 스크립트 테스트");
+                common.timeLog("타임로그 테스트");
+            }
+        </script>
+    </body>
+</html>

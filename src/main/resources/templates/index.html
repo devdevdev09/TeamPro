@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <th:block layout:fragment="fragments/header"></th:block>
+    </head>
+    <body>
+        <h1>Index.html</h1>
+
+        <th:block th:replace="fragments/script"></th:block>
+        <footer th:replace="fragments/footer"></footer>
+        <script>
+            $(function(){
+                console.log("index.html script!!");
+                init();
+            });
+
+            const init = function(){
+                console.log("init");
+                testLog();
+            }
+
+            const testLog = function(){
+                common.log("공통 스크립트 테스트");
+                common.timeLog("타임로그 테스트");
+            }
+        </script>
+    </body>
+</html>

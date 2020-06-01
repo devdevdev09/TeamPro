@@ -1,0 +1,11 @@
+server:
+  port: 20020
+
+spring:
+  output:
+    ansi:
+      enabled: always
+
+logging:
+  file:
+    path: d:/logs/teamPro
