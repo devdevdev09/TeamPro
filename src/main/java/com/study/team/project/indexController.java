@@ -6,6 +6,7 @@ import com.study.team.testVo.TestVo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,9 +15,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class indexController {
 
     private Logger logger = LoggerFactory.getLogger(indexController.class);
+
+    @Autowired
+    private IndexService indexService;
     
     @RequestMapping("/")
     public String index(){
+
+        indexService.getIndex();
         return "index";
     }
 

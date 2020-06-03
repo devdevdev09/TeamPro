@@ -5,7 +5,18 @@ spring:
   output:
     ansi:
       enabled: always
+# Database
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@192.168.99.100:1521/xe
+    username: system
+    password: oracle
 
 logging:
   file:
     path: d:/logs/teamPro
+
+mybatis:
+  mapper-locations: mapper/*.xml
+
+
