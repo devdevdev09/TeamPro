@@ -1,7 +1,7 @@
-package com.study.team.project;
+package com.study.team.project.mapper;
 
 import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface IndexMapper {
-    HashMap<String, String> getIndex();
+    List<HashMap<String, String>> getIndex();
 }

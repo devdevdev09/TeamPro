@@ -1,4 +1,4 @@
-package com.study.team.testVo;
+package com.study.team.vo.testVo;
 
 import lombok.Data;
 

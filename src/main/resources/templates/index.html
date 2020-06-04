@@ -17,15 +17,29 @@
                 <h3>/TestVo</h3>
             </li>
         </ol>
-        
-        
-        
+
+        <ul>
+            <li th:each="emp : ${list}">
+                <span th:text=${emp.ID}></span>
+                <span th:text=${emp.NAME}></span>
+                <span th:text=${emp.AGE}></span>
+                <span th:text=${emp.PHONE}></span>
+                <span th:text=${emp.ADDRESS}></span>
+                <hr>
+            </li>
+        </ul>
 
         <th:block th:replace="fragments/script"></th:block>
         <footer th:replace="fragments/footer"></footer>
-        <script>
+        <script th:inline="javascript">
+            /*<![CDATA[*/
+                var list = /*[[${list}]]*/ 'default';
+                
+            /*]]>*/
+
             $(function(){
                 console.log("index.html script!!");
+                console.log(list);
                 init();
             });
 

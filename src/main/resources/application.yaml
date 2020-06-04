@@ -17,6 +17,7 @@ logging:
     path: d:/logs/teamPro
 
 mybatis:
-  mapper-locations: mapper/*.xml
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mybatis/**/*.xml
 
 
