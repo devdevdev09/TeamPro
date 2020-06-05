@@ -9,11 +9,14 @@ import com.study.team.vo.testVo.TestVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+@Component
 @Controller
 public class indexController {
 
@@ -21,10 +24,15 @@ public class indexController {
 
     @Autowired
     private IndexService indexService;
+
+    @Value("${server.port}")
+    private String strvalue;
+    
     
     @RequestMapping("/")
     public String index(Model model){
         logger.debug("test", "Testtttt~~~~~~~");
+        logger.debug("value~~~", strvalue);
 
         List<HashMap<String, String>> list = indexService.getIndex();
 
