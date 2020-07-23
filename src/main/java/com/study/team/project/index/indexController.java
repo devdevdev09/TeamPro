@@ -36,11 +36,13 @@ public class indexController {
     public String index(Model model){
         logger.debug("test", "Testtttt~~~~~~~");
         logger.debug("value~~~", strvalue);
+        String tttt = System.getenv().get("PERSON");
 
         List<HashMap<String, String>> list = indexService.getIndex();
 
         model.addAttribute("list", list);
         model.addAttribute("person", person);
+        model.addAttribute("tttt", tttt);
 
         return "index";
     }
