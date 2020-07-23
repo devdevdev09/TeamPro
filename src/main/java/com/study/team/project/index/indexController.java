@@ -36,7 +36,7 @@ public class indexController {
     public String index(Model model){
         logger.debug("test", "Testtttt~~~~~~~");
         logger.debug("value~~~", strvalue);
-        String tttt = System.getenv().get("PERSON");
+        String tttt = System.getenv().get("person.name");
 
         List<HashMap<String, String>> list = indexService.getIndex();
 
