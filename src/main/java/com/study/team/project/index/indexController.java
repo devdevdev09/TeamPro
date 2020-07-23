@@ -27,6 +27,9 @@ public class indexController {
 
     @Value("${server.port}")
     private String strvalue;
+
+    @Value("${person.name}")
+    private String person;
     
     
     @RequestMapping("/")
@@ -37,6 +40,7 @@ public class indexController {
         List<HashMap<String, String>> list = indexService.getIndex();
 
         model.addAttribute("list", list);
+        model.addAttribute("person", person);
 
         return "index";
     }
